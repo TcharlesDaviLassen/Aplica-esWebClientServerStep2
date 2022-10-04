@@ -6,5 +6,6 @@
     "target": "ES6",
     "module": "CommonJS",
     "lib": ["es2021", "DOM"]
-   }
+
+  }
 }

@@ -8,7 +8,7 @@ import Usuario from "./model/Usuario";
     await Usuario.sync({ force: true });
     await Usuario.create({ nome: "Tcharles", senha: "123456", email: "tcharlesdavilassen@gmail.com" })
 
-    let logado: any = await Usuario.localizaUsuario('tcharlesdavilassen@gmail.com', '123456');
+    let logado: any = await Usuario.localizaUsuarios('tcharlesdavilassen@gmail.com', '123456');
     console.log(logado.toJSON());
 
 })()

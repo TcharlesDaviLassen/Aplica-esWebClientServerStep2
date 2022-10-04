@@ -1,9 +1,14 @@
-import { Sequelize, DataTypes, Model } from 'sequelize';
-import  sequelize  from "../db/sequelize";
+import { Sequelize, DataTypes, Model, IntegerDataType } from 'sequelize';
+import sequelize from "../db/sequelize";
 
 class Usuario extends Model {
 
-  static async localizaUsuario(email: string, senha: string) {
+  declare id: number;
+  declare nome: string;
+  declare senha: string;
+  declare email: string;
+
+  static async localizaUsuarios(email: string, senha: string) {
     return await Usuario.findOne({
       where: {
         email: email,
@@ -37,4 +42,4 @@ Usuario.init(
   });
 
 
-  export default Usuario;
+export default Usuario;
